@@ -1,4 +1,4 @@
-#!/bin/bash
+9#!/bin/bash
 clear
 admtoken="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
 
@@ -416,7 +416,7 @@ fi
 }  
 function_verify () {
 [[ $(dpkg --get-selections|grep -w "curl"|head -1) ]] || apt-get install curl -y &>/dev/null
-  permited=$(curl -sSL "http://${ipadmin}:81/bot")
+  permited=$(curl -sSL "http://186.148.224.137:81/bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @CONECTEDMX_BOT \n————————————————————————————————————————————————————\n\n\n"
