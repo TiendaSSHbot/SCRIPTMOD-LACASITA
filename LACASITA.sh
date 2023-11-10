@@ -1,7 +1,5 @@
-9#!/bin/bash
+#!/bin/bash
 clear
-admtoken="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
-
 if [ `whoami` != 'root' ]
 	then 
      echo -e "\e[1;31mPARA PODER USAR EL INSTALADOR ES NECESARIO SER ROOT\nAUN NO SABES COMO INICAR COMO ROOT?\nDIJITA ESTE COMANDO EN TU TERMINAL ( sudo -i )\e[0m" 
@@ -515,31 +513,29 @@ service ssh restart &>/dev/null
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games/
 #exit
 }
-
 ofus() {
-    unset server
-    server=$(echo ${txt_ofuscatw} | cut -d':' -f1)
     unset txtofus
     number=$(expr length $1)
     for ((i = 1; i < $number + 1; i++)); do
         txt[$i]=$(echo "$1" | cut -b $i)
         case ${txt[$i]} in
-        ".") txt[$i]="F" ;;
-        "F") txt[$i]="." ;;
-        "3") txt[$i]="@" ;;
-        "@") txt[$i]="3" ;;
-        "5") txt[$i]="9" ;;
-        "9") txt[$i]="5" ;;
-        "6") txt[$i]="P" ;;
-        "P") txt[$i]="6" ;;
-        "L") txt[$i]="R" ;;
-        "R") txt[$i]="L" ;;
+        ".") txt[$i]="x" ;;
+        "x") txt[$i]="." ;;
+        "5") txt[$i]="s" ;;
+        "s") txt[$i]="5" ;;
+        "1") txt[$i]="@" ;;
+        "@") txt[$i]="1" ;;
+        "2") txt[$i]="?" ;;
+        "?") txt[$i]="2" ;;
+        "4") txt[$i]="0" ;;
+        "0") txt[$i]="4" ;;
+        "/") txt[$i]="K" ;;
+        "K") txt[$i]="/" ;;
         esac
         txtofus+="${txt[$i]}"
     done
     echo "$txtofus" | rev
 }
-
 verificar_arq () {
 [[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
 [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
@@ -617,7 +613,7 @@ function_verify
 #updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@tiendasshgen_bot\e[97m]"
+   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@conectedmx_bot\e[97m]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="." 
@@ -632,12 +628,12 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
  #  msg -verd "    $(source trans -b es:${id} "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93m@conectedmx_bot\e[97m]"
   wget -qO- ifconfig.me > /etc/VPS-MX/IP.log
   userid="${SCPdir}/ID"
-if [[ $(cat ${userid}|grep "28920101") = "" ]]; then
+if [[ $(cat ${userid}|grep "605531451") = "" ]]; then
 activ=$(cat ${userid})
-GEN="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
+GEN="1235413737:AAEWLffj1FO4GQ5Iwoo4XvIm4ESlFjHA0_A"
 UR="https://api.telegram.org/bot$GEN/sendMessage"
-TOKEN="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
-			URL="https://api.telegram.org/bot$admtoken/sendMessage"
+TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 =❯👇   
  ◄══════◄••◩••►══════►
  Version: $(cat /etc/versin_script) INSTALADO✓
@@ -651,14 +647,14 @@ TOKEN="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
  ◄══════◄••◩••►══════►
  KEY: $Key 👈 Usada
  ◄══════◄••◩••►══════►
- By @tiendasshgen_bot
+ By @Lacasitamx
  ◄══════◄••◩••►══════►
 "
 curl -s --max-time 10 -d "chat_id=$activ&disable_web_page_preview=1&text=$MSG" $UR &>/dev/null
 curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
 else
-TOKEN="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
-			URL="https://api.telegram.org/bot$admtoken/sendMessage"
+TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 =❯👇   
 ◄══════◄••◩••►══════►
  Version: $(cat /etc/versin_script) INSTALADO✓
@@ -672,7 +668,7 @@ TOKEN="6327821485:AAE-kdP_u5N2rNHV04dxwtO-HaJja-BBC1Y"
  ◄══════◄••◩••►══════►
  KEY: $Key 👈Usada
  ◄══════◄••◩••►══════►
- By @tiendasshgen_bot
+ By @Lacasitamx
  ◄══════◄••◩••►══════►
 "
 curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
